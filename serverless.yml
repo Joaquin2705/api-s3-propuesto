@@ -31,7 +31,6 @@ functions:
           path: /s3/lista-buckets
           method: get
           cors: true
-          integration: lambda
 
   lista_objetos_bucket:
     handler: lista_objetos_bucket.lambda_handler
@@ -40,7 +39,6 @@ functions:
           path: /s3/bucket/lista-objetos
           method: post # Asumo que aquí envías el nombre del bucket en el body
           cors: true
-          integration: lambda
 
   # --- 👇 Funciones NUEVAS del Ejercicio 4 ---
 
@@ -52,7 +50,6 @@ functions:
           path: /s3/bucket/crear
           method: post # Usamos POST para crear un recurso nuevo
           cors: true
-          integration: lambda
           # En el body del POST, enviarás:
           # { "bucket_name": "nombre-de-tu-bucket-super-unico" }
 
@@ -66,7 +63,6 @@ functions:
           path: /s3/bucket/crear-directorio
           method: post
           cors: true
-          integration: lambda
           # En el body del POST, enviarás:
           # { "bucket_name": "mi-bucket-existente", "directory_name": "mi/carpeta/" }
           # ¡Asegúrate de que 'directory_name' termine en '/'!
@@ -83,7 +79,6 @@ functions:
           path: /s3/bucket/generar-url-subida
           method: post
           cors: true
-          integration: lambda
           # En el body del POST, enviarás:
           # { 
           #   "bucket_name": "mi-bucket-existente", 
